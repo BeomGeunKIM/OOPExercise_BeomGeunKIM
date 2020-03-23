@@ -122,7 +122,19 @@ public class MemberManager {
 	}
 	
 	public void deleteOne() {
-		
+		System.out.print("탈퇴할 회원의 ID를 입력하세요 : ");
+		String srcId = sc.next();
+		for(int i = 0; i <= cnt; i++) {
+			if(srcId == m[i].getUserId()) {
+				for(int j = i + 1; j <= cnt; j++) {
+					Member temp = m[j-1];
+					m[j-1] = m[j];
+					m[j] = temp;
+				}
+			} else {
+				System.out.println("삭제할 회원 정보가 존재하지 않습니다."); return;
+			}
+		}cnt--;
 	}
 	
 	public void deleteAll() {
