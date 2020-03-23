@@ -48,7 +48,7 @@ public class MemberManager {
 	}
 	
 	public void searchName() {
-		System.out.print("검색할 아이디를 입력하세요 : ");
+		System.out.print("검색할 이름을 입력하세요 : ");
 		String srcName = sc.next();
 		
 		for(int i = 0; i <= cnt; i++) {
@@ -61,7 +61,7 @@ public class MemberManager {
 	}
 	
 	public void searchEmail() {
-		System.out.print("검색할 아이디를 입력하세요 : ");
+		System.out.print("검색할 E-mail을 입력하세요 : ");
 		String srcEmail = sc.nextLine();
 		
 		for(int i = 0; i <= cnt; i++) {
@@ -74,15 +74,51 @@ public class MemberManager {
 	}
 	
 	public void updatePwd() {
+		System.out.print("검색할 아이디를 입력하세요 : ");
+		String srcId = sc.next();
 		
+		for(int i = 0; i <= cnt; i++) {
+			if(srcId == m[i].getUserId()) {
+				System.out.print("변경하실 비밀번호를 입력하세요 : ");
+				String changePwd = sc.next();
+				m[i].setUserPwd(changePwd);
+				System.out.println("비밀번호 수정이 완료되었습니다."); return;
+			} else {
+				System.out.println("수정할 회원이 존재하지 않습니다."); return;
+			}
+		}
 	}
 	
 	public void updateName() {
+		System.out.print("검색할 이름을 입력하세요 : ");
+		String srcName = sc.next();
 		
+		for(int i = 0; i <= cnt; i++) {
+			if(srcName == m[i].getUserName()) {
+				System.out.print("변경하실 이름을 입력하세요 : ");
+				String changeName = sc.next();
+				m[i].setUserName(changeName);;
+				System.out.println("이름 수정이 완료되었습니다."); return;
+			} else {
+				System.out.println("수정할 회원이 존재하지 않습니다."); return;
+			}
+		}
 	}
 	
 	public void updateEmail() {
+		System.out.print("검색할 E-mail을 입력하세요 : ");
+		String srcEmail = sc.next();
 		
+		for(int i = 0; i <= cnt; i++) {
+			if(srcEmail == m[i].getEmail()) {
+				System.out.print("변경하실 E-mail을 입력하세요 : ");
+				String changeEmail = sc.nextLine();
+				m[i].setEmail(changeEmail);
+				System.out.println("E-mail 수정이 완료되었습니다."); return;
+			} else {
+				System.out.println("수정할 회원이 존재하지 않습니다."); return;
+			}
+		}
 	}
 	
 	public void deleteOne() {
