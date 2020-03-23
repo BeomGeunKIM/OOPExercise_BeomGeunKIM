@@ -61,6 +61,24 @@ public class MemberMenu {
 	
 	public void updateMemberMenu() {
 		
+		do {
+			System.out.println("========회원 정보 수정========");
+			System.out.println("1. 비밀번호 수정하기");
+			System.out.println("2. 이름 수정하기");
+			System.out.println("3. 이메일 수정하기");
+			System.out.println("9. 메인메뉴로");
+			System.out.println("=========================");
+			System.out.print("메뉴 번호를 입력하세요 : ");
+			int opNum = sc.nextInt();
+			
+			switch(opNum) {
+			case 1 : mm.updatePwd(); break;
+			case 2 : mm.updateName(); break;
+			case 3 : mm.updateEmail(); break;
+			case 9 : System.out.println("메인메뉴로 이동합니다."); return;
+			default : System.out.println("잘못 입력하셨습니다. 다시 입력해주세요."); continue;
+			}
+		} while(true);
 	}
 	
 	public void deleteMemberMenu() {

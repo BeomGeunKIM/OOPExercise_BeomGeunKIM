@@ -32,6 +32,14 @@ public class MemberManager {
 		
 	}
 	
+	public void updateName() {
+		
+	}
+	
+	public void updateEmail() {
+		
+	}
+	
 	public void deleteOne() {
 		
 	}
