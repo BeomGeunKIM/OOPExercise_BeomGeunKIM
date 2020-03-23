@@ -66,4 +66,5 @@ public class Member {
 	public String getEmail() {
 		return email;
 	}
+	
 }

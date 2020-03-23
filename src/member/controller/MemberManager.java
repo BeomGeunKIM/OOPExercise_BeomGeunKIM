@@ -1,5 +1,6 @@
 package member.controller;
 
+import java.nio.file.attribute.UserPrincipalLookupService;
 import java.util.Scanner;
 
 import member.model.vo.Member;
@@ -34,7 +35,14 @@ public class MemberManager {
 	}
 	
 	public void searchId() {
+		System.out.print("검색할 아이디를 입력하세요 : ");
+		String srcId = sc.next();
 		
+		for(int i = 0; i <= cnt; i++) {
+			if(srcId == m[i].getUserId()) {
+				printOne(m[i]);
+			}
+		}
 	}
 	
 	public void searchName() {
@@ -70,7 +78,12 @@ public class MemberManager {
 	}
 	
 	public void printOne(Member m) {
-		
+		System.out.println("회원 ID : " + m.getUserId());
+		System.out.println("회원 PWD : " + m.getUserPwd());
+		System.out.println("회원 이름 : " + m.getUserName());
+		System.out.println("회원 나이 : " + m.getAge());
+		System.out.println("회원 성별 : " + m.getGender());
+		System.out.println("회원 E-mail : " + m.getEmail());
 	}
 	
 }
