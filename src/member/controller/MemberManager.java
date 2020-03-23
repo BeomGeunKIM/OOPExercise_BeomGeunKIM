@@ -41,16 +41,36 @@ public class MemberManager {
 		for(int i = 0; i <= cnt; i++) {
 			if(srcId == m[i].getUserId()) {
 				printOne(m[i]);
+			} else {
+				System.out.println("검색한 회원 정보가 존재하지 않습니다."); return;
 			}
 		}
 	}
 	
 	public void searchName() {
+		System.out.print("검색할 아이디를 입력하세요 : ");
+		String srcName = sc.next();
 		
+		for(int i = 0; i <= cnt; i++) {
+			if(srcName == m[i].getUserName()) {
+				printOne(m[i]);
+			} else {
+				System.out.println("검색한 회원 정보가 존재하지 않습니다."); return;
+			}
+		}
 	}
 	
 	public void searchEmail() {
+		System.out.print("검색할 아이디를 입력하세요 : ");
+		String srcEmail = sc.nextLine();
 		
+		for(int i = 0; i <= cnt; i++) {
+			if(srcEmail == m[i].getEmail()) {
+				printOne(m[i]);
+			} else {
+				System.out.println("검색한 회원 정보가 존재하지 않습니다."); return;
+			}
+		}
 	}
 	
 	public void updatePwd() {
