@@ -125,6 +125,9 @@ public class MemberManager {
 	public void deleteOne() {
 		System.out.print("탈퇴할 회원의 ID를 입력하세요 : ");
 		String srcId = sc.next();
+		if(cnt == 0) {
+			System.out.println("삭제할 회원 정보가 존재하지 않습니다."); return;
+		}
 		for(int i = 0; i < cnt; i++) {
 			if(srcId.equals(m[i].getUserId())) {
 				for(int j = i + 1; j < cnt; j++) {
@@ -132,9 +135,7 @@ public class MemberManager {
 					m[j-1] = m[j];
 					m[j] = temp;
 				}
-			} else {
-				System.out.println("삭제할 회원 정보가 존재하지 않습니다."); return;
-			}
+			} 
 		}cnt--;
 	}
 	
@@ -148,6 +149,7 @@ public class MemberManager {
 			m[i].setEmail("");
 		}
 		cnt = 0;
+		System.out.println("전체 회원정보 삭제가 완료되었습니다.");
 	}
 	
 	public void printAllMember() {
