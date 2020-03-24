@@ -82,7 +82,7 @@ public class MemberManager {
 	}
 	
 	public void updatePwd() {
-		System.out.print("검색할 아이디를 입력하세요 : ");
+		System.out.print("검색할 ID를 입력하세요 : ");
 		String srcId = sc.next();
 		
 		for(int i = 0; i < cnt; i++) {
@@ -98,11 +98,11 @@ public class MemberManager {
 	}
 	
 	public void updateName() {
-		System.out.print("검색할 이름을 입력하세요 : ");
-		String srcName = sc.next();
+		System.out.print("검색할 ID를 입력하세요 : ");
+		String srcId = sc.next();
 		
 		for(int i = 0; i < cnt; i++) {
-			if(srcName.equals(m[i].getUserName())) {
+			if(srcId.equals(m[i].getUserId())) {
 				System.out.print("변경하실 이름을 입력하세요 : ");
 				String changeName = sc.next();
 				m[i].setUserName(changeName);;
@@ -115,10 +115,10 @@ public class MemberManager {
 	
 	public void updateEmail() {
 		System.out.print("검색할 E-mail을 입력하세요 : ");
-		String srcEmail = sc.next();
+		String srcId = sc.next();
 		
 		for(int i = 0; i < cnt; i++) {
-			if(srcEmail.equals(m[i].getEmail())) {
+			if(srcId.equals(m[i].getUserId())) {
 				System.out.print("변경하실 E-mail을 입력하세요 : ");
 				String changeEmail = sc.nextLine();
 				m[i].setEmail(changeEmail);
