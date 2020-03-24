@@ -61,9 +61,8 @@ public class MemberManager {
 	}
 	
 	public void searchEmail() {
-//		sc.nextLine();
 		System.out.print("검색할 E-mail을 입력하세요 : ");
-		String srcEmail = sc.nextLine();
+		String srcEmail = sc.next();
 		
 		for(int i = 0; i < cnt; i++) {
 			if(srcEmail.equals(m[i].getEmail())) {
@@ -141,20 +140,24 @@ public class MemberManager {
 	
 	public void deleteAll() {
 		for(int i = 0; i < cnt; i++) {
-			m[i].setUserId("");
-			m[i].setUserPwd("");
-			m[i].setUserName("");
+			m[i].setUserId(null);
+			m[i].setUserPwd(null);
+			m[i].setUserName(null);
 			m[i].setAge(0);
-			m[i].setGender(' ');
-			m[i].setEmail("");
+			m[i].setGender('\u0000');
+			m[i].setEmail(null);
 		}
 		cnt = 0;
 		System.out.println("전체 회원정보 삭제가 완료되었습니다.");
 	}
 	
 	public void printAllMember() {
-		for(int i = 0; i < cnt; i++) {
-			printOne(m[i]);
+		if(cnt != 0) {
+			for(int i = 0; i < cnt; i++) {
+				printOne(m[i]);
+			}
+		} else {
+			System.out.println("출력할 회원정보가 없습니다.");
 		}
 	}
 	
