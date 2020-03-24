@@ -38,7 +38,7 @@ public class MemberManager {
 		System.out.print("검색할 아이디를 입력하세요 : ");
 		String srcId = sc.next();
 		
-		for(int i = 0; i <= cnt; i++) {
+		for(int i = 0; i < cnt; i++) {
 			if(srcId == m[i].getUserId()) {
 				printOne(m[i]);
 			} else {
@@ -51,7 +51,7 @@ public class MemberManager {
 		System.out.print("검색할 이름을 입력하세요 : ");
 		String srcName = sc.next();
 		
-		for(int i = 0; i <= cnt; i++) {
+		for(int i = 0; i < cnt; i++) {
 			if(srcName == m[i].getUserName()) {
 				printOne(m[i]);
 			} else {
@@ -64,7 +64,7 @@ public class MemberManager {
 		System.out.print("검색할 E-mail을 입력하세요 : ");
 		String srcEmail = sc.nextLine();
 		
-		for(int i = 0; i <= cnt; i++) {
+		for(int i = 0; i < cnt; i++) {
 			if(srcEmail == m[i].getEmail()) {
 				printOne(m[i]);
 			} else {
@@ -77,7 +77,7 @@ public class MemberManager {
 		System.out.print("검색할 아이디를 입력하세요 : ");
 		String srcId = sc.next();
 		
-		for(int i = 0; i <= cnt; i++) {
+		for(int i = 0; i < cnt; i++) {
 			if(srcId == m[i].getUserId()) {
 				System.out.print("변경하실 비밀번호를 입력하세요 : ");
 				String changePwd = sc.next();
@@ -93,7 +93,7 @@ public class MemberManager {
 		System.out.print("검색할 이름을 입력하세요 : ");
 		String srcName = sc.next();
 		
-		for(int i = 0; i <= cnt; i++) {
+		for(int i = 0; i < cnt; i++) {
 			if(srcName == m[i].getUserName()) {
 				System.out.print("변경하실 이름을 입력하세요 : ");
 				String changeName = sc.next();
@@ -109,7 +109,7 @@ public class MemberManager {
 		System.out.print("검색할 E-mail을 입력하세요 : ");
 		String srcEmail = sc.next();
 		
-		for(int i = 0; i <= cnt; i++) {
+		for(int i = 0; i < cnt; i++) {
 			if(srcEmail == m[i].getEmail()) {
 				System.out.print("변경하실 E-mail을 입력하세요 : ");
 				String changeEmail = sc.nextLine();
@@ -124,9 +124,9 @@ public class MemberManager {
 	public void deleteOne() {
 		System.out.print("탈퇴할 회원의 ID를 입력하세요 : ");
 		String srcId = sc.next();
-		for(int i = 0; i <= cnt; i++) {
+		for(int i = 0; i < cnt; i++) {
 			if(srcId == m[i].getUserId()) {
-				for(int j = i + 1; j <= cnt; j++) {
+				for(int j = i + 1; j < cnt; j++) {
 					Member temp = m[j-1];
 					m[j-1] = m[j];
 					m[j] = temp;
@@ -138,7 +138,7 @@ public class MemberManager {
 	}
 	
 	public void deleteAll() {
-		for(int i = 0; i <= cnt; i++) {
+		for(int i = 0; i < cnt; i++) {
 			m[i].setUserId("");
 			m[i].setUserPwd("");
 			m[i].setUserName("");
@@ -150,7 +150,9 @@ public class MemberManager {
 	}
 	
 	public void printAllMember() {
-		
+		for(int i = 0; i < cnt; i++) {
+			printOne(m[i]);
+		}
 	}
 	
 	public void printOne(Member m) {
