@@ -26,13 +26,13 @@ public class MemberManager {
 		while(true) {
 			System.out.print("성별을 입력하세요 : ");
 			gender = sc.next().charAt(0);
-			sc.nextLine();
-			if(gender != 'm' || gender != 'M' || gender != '남' || gender != 'f' || gender != 'F' || gender != '여') {
-				System.out.println("잘못입력하셨습니다. 다시 입력하세요");
-			} else {
+			if(gender == 'm' || gender == 'M' || gender == '남' || gender == 'f' || gender == 'F' || gender == '여') {
 				break;
+			} else {
+				System.out.println("잘못입력하셨습니다. 다시 입력하세요");
 			}
 		}
+		sc.nextLine();
 		System.out.print("이메일을 입력하세요 : ");
 		String email = sc.nextLine();
 		
