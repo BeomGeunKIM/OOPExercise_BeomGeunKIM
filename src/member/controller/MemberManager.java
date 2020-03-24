@@ -39,8 +39,8 @@ public class MemberManager {
 		String srcId = sc.next();
 		
 		for(int i = 0; i < cnt; i++) {
-			if(srcId == m[i].getUserId()) {
-				printOne(m[i]);
+			if(srcId.equals(m[i].getUserId())) {
+				printOne(m[i]); return;
 			} else {
 				System.out.println("검색한 회원 정보가 존재하지 않습니다."); return;
 			}
@@ -52,8 +52,8 @@ public class MemberManager {
 		String srcName = sc.next();
 		
 		for(int i = 0; i < cnt; i++) {
-			if(srcName == m[i].getUserName()) {
-				printOne(m[i]);
+			if(srcName.equals(m[i].getUserName())) {
+				printOne(m[i]); return;
 			} else {
 				System.out.println("검색한 회원 정보가 존재하지 않습니다."); return;
 			}
@@ -61,12 +61,13 @@ public class MemberManager {
 	}
 	
 	public void searchEmail() {
+//		sc.nextLine();
 		System.out.print("검색할 E-mail을 입력하세요 : ");
 		String srcEmail = sc.nextLine();
 		
 		for(int i = 0; i < cnt; i++) {
-			if(srcEmail == m[i].getEmail()) {
-				printOne(m[i]);
+			if(srcEmail.equals(m[i].getEmail())) {
+				printOne(m[i]); return;
 			} else {
 				System.out.println("검색한 회원 정보가 존재하지 않습니다."); return;
 			}
@@ -78,7 +79,7 @@ public class MemberManager {
 		String srcId = sc.next();
 		
 		for(int i = 0; i < cnt; i++) {
-			if(srcId == m[i].getUserId()) {
+			if(srcId.equals(m[i].getUserId())) {
 				System.out.print("변경하실 비밀번호를 입력하세요 : ");
 				String changePwd = sc.next();
 				m[i].setUserPwd(changePwd);
@@ -94,7 +95,7 @@ public class MemberManager {
 		String srcName = sc.next();
 		
 		for(int i = 0; i < cnt; i++) {
-			if(srcName == m[i].getUserName()) {
+			if(srcName.equals(m[i].getUserName())) {
 				System.out.print("변경하실 이름을 입력하세요 : ");
 				String changeName = sc.next();
 				m[i].setUserName(changeName);;
@@ -110,7 +111,7 @@ public class MemberManager {
 		String srcEmail = sc.next();
 		
 		for(int i = 0; i < cnt; i++) {
-			if(srcEmail == m[i].getEmail()) {
+			if(srcEmail.equals(m[i].getEmail())) {
 				System.out.print("변경하실 E-mail을 입력하세요 : ");
 				String changeEmail = sc.nextLine();
 				m[i].setEmail(changeEmail);
@@ -125,7 +126,7 @@ public class MemberManager {
 		System.out.print("탈퇴할 회원의 ID를 입력하세요 : ");
 		String srcId = sc.next();
 		for(int i = 0; i < cnt; i++) {
-			if(srcId == m[i].getUserId()) {
+			if(srcId.equals(m[i].getUserId())) {
 				for(int j = i + 1; j < cnt; j++) {
 					Member temp = m[j-1];
 					m[j-1] = m[j];
