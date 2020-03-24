@@ -60,7 +60,13 @@ public class Member {
 	}
 	
 	public char getGender() {
-		return gender;
+		char result = ' ';
+		if(gender == 'm' || gender == 'M' || gender == '³²') {
+			result = '³²';
+		} else {
+			result = '¿©';
+		}
+		return result;
 	}
 	
 	public String getEmail() {
